@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous"></script>
+<script>
+
+    function test() {
+
+        var sentencia = $("#sentencia").val();
+        var sentenciasplit = sentencia.split(" ");
+
+        for (i = 0; i < sentenciasplit.length; i++) { 
+
+           $("#resultado").append("<div class='word' onclick='select(this)'>" + sentenciasplit[i] + "</div>");
+        
+        }
+
+    }
+
+    function select( seleccionado ) {
+
+        var seleccionado = $(seleccionado);
+
+        var palabraselec = seleccionado.innerHTML;
+        seleccionado.replaceWith("<input id='respuesta' type='text' style='float: left; margin-right: 4px; width: 20px;'>");
+        $('body').append("<button onclick='enviar(" + palabraselec + ")' type='button'>Enviar</button>");
+    
+
+    }
+
+    function enviar( palabra ) {
+       
+        var respuesta = $("#respuesta").val();
+
+        if (respuesta == palabra) {
+
+            alert("respuesta correcta!");
+        
+        } else {
+        
+            alert(respuesta + " " + palabra);
+        }
+
+    }
+
+</script>
+</head>
+<style>
+
+.word {
+    float: left;
+    margin-right: 4px;
+
+}
+
+.word:hover {
+    background-color: darkorange;
+    color: white;
+        cursor: pointer;
+}
+</style>
+<body>
+
+    <div style="margin-bottom: 20px;">Pruebas de la actividad completa la frase</div>
+    <input id="sentencia" type="text" placeholder="Escribe una sentencia para la actividad" style="width: 250px;">    
+    <button onclick="test()" type="button">Enviar</button>
+
+    <div style="margin: 20px 0px;">Da click en la palabra que el alumno va a completar</div>
+    <div id="resultado" style="margin-top: 20px; float: left;"></div>
+</body>
+</html>

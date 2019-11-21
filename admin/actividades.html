@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous"></script>
+<script>
+
+    function guardarfrase() {
+
+        var sentencia = $("#sentencia").val();
+        var sentenciasplit = sentencia.split(" ");
+
+
+        sessionStorage.setItem("sentencia", String(sentencia));
+
+        for (i = 0; i < sentenciasplit.length; i++) { 
+
+           $("#resultado").append("<div class='word' onclick='select(this)'>" + sentenciasplit[i] + "</div>");
+        
+        }
+
+        $(".admin").hide();
+        $("#instrucciones").text("Selecciona la palabra faltante");
+
+    }
+
+    function select( seleccionado ) {
+
+
+        var palabraselec = seleccionado.textContent; 
+
+        sessionStorage.setItem("palabraselec", String(palabraselec));
+
+        var caracteres = palabraselec.length * 7;
+
+        $(seleccionado).replaceWith("<input id='respuesta' type='text' style='float: left; margin-top: 8px; margin-right: 4px; width: " + caracteres + "px;'>");
+        $('body').append("<button onclick='enviar();' type='button' style='margin-top: 8px; float: left;'>Enviar</button>");
+
+        $("#instrucciones").text("Vista previa del ejercicio");
+
+        $("#guardar").show();
+    
+
+    }
+
+    function enviar( ) {
+
+         
+        var palabraselec = sessionStorage.getItem("palabraselec");
+       
+        var respuesta = $("#respuesta").val();
+
+        if (respuesta == palabraselec) {
+
+            alert("Respuesta correcta");
+        
+        } else {
+        
+            alert("Intenta de nuevo");
+        }
+
+    }
+
+</script>
+</head>
+<style>
+
+.word {
+    float: left;
+    margin-right: 4px;
+    font-size: 12px;
+    margin-top: 10px;
+
+}
+
+.word:hover {
+    background-color: darkorange;
+    color: white;
+        cursor: pointer;
+}
+</style>
+<body>
+
+    <div id="instrucciones" style="margin-top: 10px; margin-bottom: 15px;">Escribe una sentencia</div>
+    <input id="sentencia" class="admin" type="text" placeholder="Escribe una oración para la actividad" style="width: 250px;">    
+    <button class="admin" onclick="guardarfrase()" type="button">Enviar</button>
+
+    <button id="guardar" onclick="guardarcambios()" type="button" style="display: none; margin-top: 10px;">Guardar cambios</button>
+
+    <div id="resultado" style="float: left;"></div>
+</body>
+</html>

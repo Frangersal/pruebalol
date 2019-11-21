@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="utf-8" />
+    <title>Banner</title>
+
+    <!-- jQuery del Slider -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+   <!-- Estilos CSS-->
+   <style>
+        .bx-wrapper, .bx-viewport {
+        height: 250px !important;
+        }
+
+        .curso {
+        margin: 10px;
+        border: 1px solid #ccc;
+        float: left;
+        width: 22%;
+        margin-left: calc(2% - 11px);
+        margin-right: calc(2% - 11px);
+        
+        }
+
+        .curso:hover {
+        border: 1px solid #777;
+        }
+
+        .curso img {
+        width: 100%;
+        height: auto;
+        }
+
+        .nombreCurso {
+        text-align: left;
+        padding: 15px;
+        font-family: helvetica;
+        color: blue;
+        font-size: 30px;
+        
+        }
+
+    
+
+        #encabezado {
+            text-align: center;
+            font-family: helvetica;
+        }
+
+        #contenidoCurso {
+            text-align: left;
+        }
+
+        .contenedorCursos{
+            width: 100%;
+            float: left;
+            margin-bottom: 30px;
+            font-family: helvetica;
+        } 
+
+        p{
+            font-family: helvetica;
+        }
+    </style>
+
+    <!-- Javascript del Slider -->
+    <script type="text/javascript" >
+        $(document).ready(function(){
+            
+            $('.galeria').bxSlider({
+                mode: 'fade',
+                captions: false,
+                SlideWidth: 1200,
+                responsive: true,
+                pager: true,
+            });
+	
+        });
+    </script>
+</head>
+
+<body>
+    <section id="global">
+            <!-- Slider en el cuerpo de la pagina-->
+			<div id="slider">
+				<div class="galeria">
+				  <div><img src="img/hojas.jpg" title="Hojas"></div>
+				  <div><img src="img/rojo.jpg" title="The long and winding road"></div>
+				  <div><img src="img/cielo.jpg" title="Happy trees"></div>
+				</div>
+            </div>
+
+
+             <!-- Contenedor de los cursos-->
+            <section class="contenedorCursos">
+
+              <div class="curso">
+                <a target="_blank" href="../banner/img/cielo.jpg">
+                  <img src="../banner/img/cielo.jpg" alt="Cinque Terre" width="600" height="400">
+                </a>
+                <div class="nombreCurso">Curso 1</div>
+                <div class="contenidoCurso">Descripcion del curso 1</div>
+              </div>
+              
+              <div class="curso">
+                <a target="_blank" href="../banner/img/cielo.jpg">
+                  <img src="../banner/img/cielo.jpg" alt="Forest" width="600" height="400">
+                </a>
+                <div class="nombreCurso">Curso 2</div>
+                <div class="contenidoCurso">Descripcion del curso 2</div>
+              </div>
+              
+              <div class="curso">
+                <a target="_blank" href="../banner/img/cielo.jpg">
+                  <img src="../banner/img/cielo.jpg" alt="Northern Lights" width="600" height="400">
+                </a>
+                <div class="nombreCurso">Curso 3</div>
+                <div class="contenidoCurso">Descripcion del curso 3</div>
+              </div>
+              
+              <div class="curso">
+                <a target="_blank" href="../banner/img/cielo.jpg">
+                  <img src="../banner/img/cielo.jpg" alt="Mountains" width="600" height="400">
+                </a>
+                <div class="nombreCurso">Curso 4</div>
+                <div class="contenidoCurso">Descripcion del curso 4</div>
+              </div> 
+
+            </section>
+              
+            
+            <!-- Quienes somos-->
+            <div id="quienesSomos">
+                <div id="encabezado">
+                    <h1>¿Quiénes somos?</h1>
+                </div>
+                <div id="contenido">
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget lectus leo. Aliquam ut quam
+                        fermentum elit fermentum feugiat ultricies ac felis. Praesent sed ipsum quam. Nunc ultricies augue mi, eget
+                        fermentum nunc condimentum sit amet. Nulla pharetra dolor tincidunt sapien convallis, in ultricies nisi
+                        tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        Praesent vitae justo sit amet neque vestibulum mollis. Proin vulputate blandit imperdiet.
+                    <br>
+                    it is a long established fact that a reader will be distracted by the readable content of a page when looking at its
+                        layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to
+                        using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web
+                        page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web
+                        sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
+                        purpose (injected humour and the like).
+                    </p>
+                </div>
+            </div>
+    </section>       
+</body>
+</html>

@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" />
+        <title>Escoge materia</title>
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+
+    <style>
+        body{
+            font-family: "montserrat";  
+            margin: 0px;
+        }
+
+        #materia1{
+            border-radius: 20px;
+            width: calc(20% - 20px);
+            background: black;
+            float: left;
+            height: 200px;
+            margin: 10px;
+            cursor: pointer;
+            box-shadow: 7px 7px 7px rgba(46,45,41,0.35);
+            overflow: hidden;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 200px;
+           
+        }
+
+        #nombremat1{
+            background: rgba(0, 0, 0, 0.7);
+            margin-top: 110px;
+            padding: 5px 0px;
+            font-size: 24px;
+            text-align: center; 
+            color: white;
+        }
+
+        #materia1:hover{
+            transform: scale(1.1);
+        }
+
+    
+
+    </style>
+
+    <script type="text/javascript">
+       
+    </script>
+
+</head>
+<body>
+
+    <div id="wrapper" style="width:100%; height:100%; position:fixed; background:whitesmoke;">
+    
+        <div id="contenedor" style="width: calc(100% - 36px);   float:left; padding: 10px;  height: 500px; ">
+    
+            <div id="instrucciones"
+                style="width:100%;float:left;position: relative;top: 3%;font-size: 40px;text-align: center;margin: 10px 0px;">
+                PRIMER MODULO
+            </div>
+    
+            <div id="instrucciones" style="width:100%;float:left;position: relative;top: 12%;font-size: 28px;text-align: center;margin: 10px 0px;">
+                Haz clic a la materia para comenzar a trabajar.
+            </div>
+    
+            <div id="contenedormaterias" style="width:100%;float:left;position: relative;top: calc(50% - 150px);">
+    
+                <div id="materia1" style="background-image: url(./img/programacion.png);">
+                    <div id="nombremat1">Informatica</div>
+                </div>
+    
+                <div id="materia1" style="background-image: url(./img/matematicas.png);">
+                    <div id="nombremat1">Matematicas</div>
+                </div>
+    
+                <div id="materia1" style="background-image: url(./img/ingles.png);">
+                    <div id="nombremat1">Ingles</div>
+                </div>
+    
+                <div id="materia1" style="background-image: url(./img/diseño.png);">
+                    <div id="nombremat1">Diseño </div>
+                </div>
+    
+                <div id="materia1" style="background-image: url(./img/administracion.png);">
+                    <div id="nombremat1">Administracion</div>
+                </div>
+   
+            </div>
+    
+        </div>
+    
+    </div>
+
+</body>
+
+</html>

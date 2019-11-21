@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+<script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous"></script>
+<script>
+
+
+    function agregapregunta() {
+
+        var numpreguntas = parseInt($("#numpreguntas").val()) + 1;
+        $("#numpreguntas").val(numpreguntas);
+        $('body').append('<div id="contenedorpregunta' + numpreguntas + '" style="display: block; font-size: 12px; margin-top: 10px;">' + numpreguntas + ' <input type="text" placeholder="Escribe una pregunta" style="width: 200px;"><div id="respuestas' + numpreguntas + '" style="float: left; width: 100%; margin-bottom: 20px;"></div></div><button type="button" onclick="agregarespuesta(' + numpreguntas + ')" style="margin-top: 10px; display: block;">Agregar respuesta</button><input id="numrespuestas'+ numpreguntas + '" type="hidden" value="0">');
+
+    
+    }
+
+    function agregarespuesta( preguntaactual ) {
+
+        var numrespuestas = parseInt($("#numrespuestas" + preguntaactual).val() ) + 1;
+        $("#numrespuestas" + preguntaactual).val(numrespuestas);
+
+        $("#respuestas" + preguntaactual).append('<div style="float: left; margin-right: 2px; margin-top: 10px;">' + numrespuestas + '</div><input id="respuesta'+numrespuestas+'" type="text" placeholder="respuesta" style="float: left; margin-top: 10px; margin-right: 5px;">');
+
+
+    
+    }
+
+</script>
+</head>
+<body>
+
+    <button type="button" onclick="agregapregunta()">Agregar pregunta</button>
+    <input id="numpreguntas" type="hidden" value="0">
+
+
+    
+</body>
+</html>
